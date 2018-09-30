@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             xmlns:tapped="clr-namespace:App2.Views.ComponentsComponents"
+             x:Class="App2.Views.Jogadores"
+             Title="Jogadores">
+
+    <ContentPage.BindingContext>
+        <vm:JogadoresViewModel></vm:JogadoresViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Jogadores}" HasUnevenRows="true" SelectedItem="{Binding JogadorSelecionado}" tapped:ItemTappedAttached.Command="{Binding JogadorTappedCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5">
+                            <Label FontSize="Large" Text="{Binding Name}" FontAttributes="Bold"></Label>
+                            <!--<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">-->
+                            <!--</StackLayout>-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

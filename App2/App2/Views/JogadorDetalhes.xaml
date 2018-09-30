@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             x:Class="App2.Views.JogadorDetalhes"
+             Title="Detalhes do Jogador">
+    <ContentPage.BindingContext>
+        <vm:JogadorDetalhesViewModel></vm:JogadorDetalhesViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nome"></Label>
+            <Entry Text="{Binding Jogador.Name}" Placeholder="Nome"></Entry>
+            <Label Text="Ano de Nascimento"></Label>
+            <Entry Text="{Binding Jogador.Year}" Placeholder="Ano de Nascimento"></Entry>
+            <Label Text="Cor Preferida"></Label>
+            <Entry Text="{Binding Jogador.Color}" Placeholder="Cor Preferida"></Entry>
+            <Button Text="Verificar meu ID" Command="{Binding ChecarIdCommand}"></Button>
+            <Button Text="Voltar" Command="{Binding VoltarCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:App2.ViewModel"  x:Class="App2.Views.Login" Title="Login">
+
+    <ContentPage.BindingContext>
+
+        <vm:LoginViewModel></vm:LoginViewModel>
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="Center" Margin="50">
+
+            <Image Source="https://www.twistt.net/assets/img/profile-placeholder.png"></Image>
+
+            <Entry Placeholder="email@email.com" Text="{Binding Usuario.Usuario}"></Entry>
+            <Entry Placeholder="123456" Text="{Binding Usuario.Senha}"></Entry>
+
+            <Button Text="Login" Command="{Binding LoginClickedCommand}"></Button>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
