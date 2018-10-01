@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             x:Class="App2.Views.CadastrarPartida">
+
+    <ContentPage.BindingContext>
+        <vm:CadastrarPartidaViewModel></vm:CadastrarPartidaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding PartidaModel.NomeParitda}"></Entry>
+            <Entry Text="{Binding PartidaModel.Data}"></Entry>
+            <Entry Text="{Binding PartidaModel.Hora}"></Entry>
+            <Entry Text="{Binding PartidaModel.Time1}"></Entry>
+            <Entry Text="{Binding PartidaModel.Time2}"></Entry>
+            <Entry Text="{Binding PartidaModel.LocalCompeticao}"></Entry>
+            <Entry Text="{Binding PartidaModel.Competicao}"></Entry>
+            <Entry Text="{Binding PartidaModel.Escalacao1}"></Entry>
+            <Entry Text="{Binding PartidaModel.Escalacao2}"></Entry>
+            <Button Text="Cadastrar Partida" Command="{Binding CadastrarTimeCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

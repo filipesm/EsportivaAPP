@@ -15,11 +15,9 @@ namespace App2.Layers.Business
             return jogadores;
         }
 
-        public void SaveJogador()
+        public void SaveJogador(JogadorSalesForceModel jogadorSalesForce)
         {
-            var jogadores = new JogadoresService().SaveJogadoresOnSalesForce();
-
-            return jogadores;
+            new JogadoresService().SaveJogadoresOnSalesForce(jogadorSalesForce);
         }
     }
 }

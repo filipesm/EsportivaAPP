@@ -22,25 +22,31 @@ namespace App2.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Contato>(new Contato(), "ContatoAbrir", (sender) =>
-            {
-                Detail = new NavigationPage(new Contato());
-                IsPresented = false;
-            });
-
-            MessagingCenter.Subscribe<QuemSomos>(new QuemSomos(), "QuemSomosAbrir", (sender) =>
-            {
-                Detail = new NavigationPage(new QuemSomos());
-                IsPresented = false;
-            });
-
             MessagingCenter.Subscribe<Jogadores>(new Jogadores(), "JogadoresAbrir", (sender) =>
             {
                 Detail = new NavigationPage(new Jogadores());
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<DateModel>(new DateModel(), "JogadorDetalhesAbrir", (sender) =>
+            MessagingCenter.Subscribe<CadastrarJogador>(new CadastrarJogador(), "CadastrarJogadorAbrir", (sender) =>
+            {
+                Detail = new NavigationPage(new CadastrarJogador());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<CadastrarTime>(new CadastrarTime(), "CadastrarTimeAbrir", (sender) =>
+            {
+                Detail = new NavigationPage(new CadastrarTime());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<CadastrarPartida>(new CadastrarPartida(), "CadastrarPartidaAbrir", (sender) =>
+            {
+                Detail = new NavigationPage(new CadastrarPartida());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<DateModel>(new JogadorDetalhes(), "JogadorDetalhesAbrir", (sender) =>
             {
                 Global.Jogador = sender;
                 Detail = new NavigationPage(new JogadorDetalhes());
@@ -52,9 +58,10 @@ namespace App2.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Contato>(this, "ContatoAbrir");
-            MessagingCenter.Unsubscribe<QuemSomos>(this, "QuemSomosAbrir");
             MessagingCenter.Unsubscribe<Jogadores>(this, "JogadoresAbrir");
+            MessagingCenter.Unsubscribe<CadastrarJogador>(this, "CadastrarJogadorAbrir");
+            MessagingCenter.Unsubscribe<CadastrarTime>(this, "CadastrarTimeAbrir");
+            MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "JogadorDetalhesAbrir");
         }
     }
 }

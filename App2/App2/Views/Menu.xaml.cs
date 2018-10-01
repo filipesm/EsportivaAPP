@@ -16,18 +16,24 @@ namespace App2.Views
         {
             InitializeComponent();
         }
-
-        private void ContatoClicked(object o, EventArgs e)
-        {
-            MessagingCenter.Send(new Contato(), "ContatoAbrir");
-        }
-        private void QuemSomosClicked(object o, EventArgs e)
-        {
-            MessagingCenter.Send(new QuemSomos(), "QuemSomosAbrir");
-        }
-        private void BotaoJogadoresClicked(object o, EventArgs e)
+        private void BotaoJogadoresClicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(new Jogadores(), "JogadoresAbrir");
+        }
+
+        private void CadastrarJogadorClicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(new CadastrarJogador(), "CadastrarJogadorAbrir");
+        }
+
+        private void CadastrarTimeClicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(new CadastrarTime(), "CadastrarTimeAbrir");
+        }
+
+        private void CadastrarPartidaClicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(new CadastrarPartida(), "CadastrarPartidaAbrir");
         }
     }
 }

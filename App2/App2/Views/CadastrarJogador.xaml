@@ -18,8 +18,9 @@
                 <Entry Text="{Binding JogadorSalesForce.Nascimento}" Placeholder="00/00/1000"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Time}" Placeholder="São Paulo"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.NumeroCamisa}" Placeholder="Numero da camisa"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Apelido}" Placeholder="Numero da camisa"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Altura}" Placeholder="Numero da camisa"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Apelido}" Placeholder="Apelido"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Altura}" Placeholder="Altura"></Entry>
+                <Button Text="Cadastrar" Command="{Binding CadastrarCommand}"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

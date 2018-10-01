@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App2.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Contato : ContentPage
+	public partial class CadastrarTime : ContentPage
 	{
-		public Contato ()
+		public CadastrarTime ()
 		{
 			InitializeComponent ();
 		}

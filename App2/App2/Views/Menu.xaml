@@ -5,9 +5,10 @@
              Title="Menu">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Quem somos" Clicked="QuemSomosClicked"></Button>
-            <Button Text="Contato" Clicked="ContatoClicked"></Button>
             <Button Text="Jogadores" Clicked="BotaoJogadoresClicked"></Button>
+            <Button Text="Cadastrar Jogador" Clicked="CadastrarJogadorClicked"></Button>
+            <Button Text="Cadastrar Time" Clicked="CadastrarTimeClicked"></Button>
+            <Button Text="Cadastrar Partida" Clicked="CadastrarPartidaClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

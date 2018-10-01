@@ -1,4 +1,5 @@
-﻿using App2.Model;
+﻿using App2.Layers.Business;
+using App2.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,14 +11,17 @@ namespace App2.ViewModel
     public class CadastrarJogadorViewModel
     {
         public JogadorSalesForceModel JogadorSalesForce { get; set; }
-        
-        public ICommand CadastrarCommand { get; set; }
+
+        public ICommand CadastrarCommand { get; private set; }
 
         public CadastrarJogadorViewModel()
         {
-            CadastrarCommand = new Command(() => 
-            {
+            JogadorSalesForce = new JogadorSalesForceModel();
 
+            CadastrarCommand = new Command(() =>
+            {
+                App.MensagemAlerta($"{JogadorSalesForce.Nome},{JogadorSalesForce.NumeroCamisa} ,{JogadorSalesForce.Posicao}");
+                new JogadoresBusiness().SaveJogador(JogadorSalesForce);
             });
         }
     }

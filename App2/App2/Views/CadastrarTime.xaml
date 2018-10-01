@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             x:Class="App2.Views.CadastrarTime">
+
+    <ContentPage.BindingContext>
+        <vm:CadastrarTimeViewModel></vm:CadastrarTimeViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding TimeModel.Nome}" Placeholder="Nome"></Entry>
+            <Entry Text="{Binding TimeModel.Sigla}" Placeholder="Sigla"></Entry>
+            <Entry Text="{Binding TimeModel.Cor1}" Placeholder="Cor1"></Entry>
+            <Entry Text="{Binding TimeModel.Cor2}" Placeholder="Cor2"></Entry>
+            <Entry Text="{Binding TimeModel.Cor3}" Placeholder="Cor3"></Entry>
+            <Entry Text="{Binding TimeModel.Nacionalidade}" Placeholder="Nacionalidade"></Entry>
+            <Entry Text="{Binding TimeModel.DataDeFundacao}" Placeholder="DataDeFundacao"></Entry>
+            <Button Text="Cadastrar Time" Command="{Binding CadastrarTimeCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

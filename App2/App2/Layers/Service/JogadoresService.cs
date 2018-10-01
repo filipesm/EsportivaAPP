@@ -30,5 +30,9 @@ namespace App2.Layers.Service
 
 
         }
+        public void SaveJogadoresOnSalesForce(JogadorSalesForceModel jogadorSalesForce)
+        {
+
+        }
     }
 }
