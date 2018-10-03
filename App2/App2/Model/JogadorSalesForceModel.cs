@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
-
 namespace App2.Model
 {
     public class JogadorSalesForceModel : INotifyPropertyChanged
@@ -18,68 +18,77 @@ namespace App2.Model
 
         #endregion
 
-        private string nome;
+        private string id;
 
-        public string Nome
+        [JsonIgnore]
+        public string Id
         {
-            get { return nome; }
-            set { if (nome != value) nome = value; NotifyPropertyChanged(); }
+            get { return id; }
+            set { if (id != value) id = value; NotifyPropertyChanged(); }
         }
 
-        private string sobreNome;
+        private string name;
 
-        public string SobreNome
+        public string Name
         {
-            get { return sobreNome; }
-            set { if (sobreNome != value) sobreNome = value; NotifyPropertyChanged(); }
+            get { return name; }
+            set { if (name != value) name = value; NotifyPropertyChanged(); }
         }
 
-        private string posicao;
+        private string data_de_nascimento__c;
 
-        public string Posicao
+        public string Data_de_nascimento__c
         {
-            get { return posicao; }
-            set { if (posicao != value) posicao = value; NotifyPropertyChanged(); }
+            get { return data_de_nascimento__c; }
+            set { if (data_de_nascimento__c != value) data_de_nascimento__c = value; NotifyPropertyChanged(); }
         }
 
-        private string nascimento;
+        private string posicao__c;
 
-        public string Nascimento
+        public string Posicao__c
         {
-            get { return nascimento; }
-            set { if (nascimento != value) nascimento = value; NotifyPropertyChanged(); }
+            get { return posicao__c; }
+            set { if (posicao__c != value) posicao__c = value; NotifyPropertyChanged(); }
         }
 
-        private string time;
+        private double altura__c;
 
-        public string Time
+        public double Altura__c
         {
-            get { return time; }
-            set { if (time != value) time = value; NotifyPropertyChanged(); }
+            get { return altura__c; }
+            set { if (altura__c != value) altura__c = value; NotifyPropertyChanged(); }
         }
 
-        private int numeroCamisa;
+        private string time__c;
 
-        public int NumeroCamisa
+        public string Time__c
         {
-            get { return numeroCamisa; }
-            set { if (numeroCamisa != value) numeroCamisa = value; NotifyPropertyChanged(); }
+            get { return time__c; }
+            set { if (time__c != value) time__c = value; NotifyPropertyChanged(); }
         }
 
-        private string apelido;
+        private string sobrenome__c;
 
-        public string Apelido
+        public string Sobrenome__c
         {
-            get { return apelido; }
-            set { if (apelido != value) apelido = value; NotifyPropertyChanged(); }
+            get { return sobrenome__c; }
+            set { if (sobrenome__c != value) sobrenome__c = value; NotifyPropertyChanged(); }
         }
 
-        private double altura;
+        private string apelido__c;
 
-        public double Altura
+        public string Apelido__c
         {
-            get { return altura; }
-            set { if (altura != value) altura = value; NotifyPropertyChanged(); }
+            get { return apelido__c; }
+            set { if (apelido__c != value) apelido__c = value; NotifyPropertyChanged(); }
+        }
+
+        private int numero_na_camisa__c;
+
+        public int Numero_na_camisa__c
+        {
+            get { return numero_na_camisa__c; }
+            set { if (numero_na_camisa__c != value) numero_na_camisa__c = value; NotifyPropertyChanged(); }
         }
     }
 }

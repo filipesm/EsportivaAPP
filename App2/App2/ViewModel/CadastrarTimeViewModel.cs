@@ -22,6 +22,7 @@ namespace App2.ViewModel
             CadastrarTimeCommand = new Command(() =>
             {
                 new TimeBusiness().SaveTime(TimeModel);
+                TimeModel = new TimeModel();
             });
 
             VoltarCommand = new Command(() =>

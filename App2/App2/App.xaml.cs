@@ -1,4 +1,6 @@
-﻿using App2.ViewModel;
+﻿using App2.Layers.Business;
+using App2.Model;
+using App2.ViewModel;
 using App2.Views;
 using System;
 using Xamarin.Forms;
@@ -18,6 +20,7 @@ namespace App2
 
         protected override void OnStart()
         {
+            Global.TokenSalesForce = new GenerateTokenBusiness().GetTokenFromSalesForce();
             MessagingCenter.Subscribe<LoginViewModel>(new LoginViewModel(), "LoginSucesso", (sender) =>
             {
                 MainPage = new Principal();

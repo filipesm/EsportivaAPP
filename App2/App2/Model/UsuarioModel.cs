@@ -5,6 +5,16 @@ namespace App2.Model
 {
     public class UsuarioModel : INotifyPropertyChanged
     {
+        #region NotifyPropertyChange
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion
+
         private string usuario;
 
         public string Usuario
@@ -34,16 +44,5 @@ namespace App2.Model
                 }
             }
         }
-
-
-        #region NotifyPropertyChange
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion
     }
 }

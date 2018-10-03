@@ -2,31 +2,42 @@
 using App2.Views;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace App2.ViewModel
 {
-    public class JogadorDetalhesViewModel
+    public class JogadorDetalhesViewModel : INotifyPropertyChanged
     {
-        private DateModel jogador;
+        #region NotifyPropertyChange
 
-        public DateModel Jogador
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            get { return jogador; }
-            set { jogador = value; }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
+
+        private JogadorSalesForceModel jogadorSalesForceModel;
+
+        public JogadorSalesForceModel JogadorSalesForceModel
+        {
+            get { return jogadorSalesForceModel; }
+            set { if (jogadorSalesForceModel != value) jogadorSalesForceModel = value; NotifyPropertyChanged(); }
         }
 
         public ICommand ChecarIdCommand { get; set; }
         public ICommand VoltarCommand { get; set; }
         public JogadorDetalhesViewModel()
         {
-            Jogador = Global.Jogador;
+            JogadorSalesForceModel = Global.JogadorSalesForceModel;
 
             ChecarIdCommand = new Command(() =>
             {
-                App.MensagemAlerta($"{Jogador.Id}, {Jogador.Name}");
+                App.MensagemAlerta($"{JogadorSalesForceModel.Name}, {JogadorSalesForceModel.Apelido__c}, {JogadorSalesForceModel.Posicao__c}");
             });
 
             VoltarCommand = new Command(() =>

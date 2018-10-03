@@ -11,24 +11,31 @@ using Xamarin.Forms;
 
 namespace App2.ViewModel
 {
-    public class JogadoresViewModel
+    public class JogadoresViewModel : INotifyPropertyChanged
     {
+        #region NotifyPropertyChange
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
 
-        private IList<DateModel> jogadores;
+        private IList<JogadorSalesForceModel> jogadores;
 
-        public IList<DateModel> Jogadores
+        public IList<JogadorSalesForceModel> Jogadores
         {
             get { return jogadores; }
-            set { jogadores = value; }
+            set { if (jogadores != value) jogadores = value; NotifyPropertyChanged(); }
         }
 
-        private DateModel jogadorSelecionado;
+        private JogadorSalesForceModel jogadorSelecionado;
 
-        public DateModel JogadorSelecionado
+        public JogadorSalesForceModel JogadorSelecionado
         {
             get { return jogadorSelecionado; }
-            set { jogadorSelecionado = value; }
+            set { if (jogadorSelecionado != value) jogadorSelecionado = value; NotifyPropertyChanged(); }
         }
 
         public ICommand JogadorTappedCommand { get; set; }

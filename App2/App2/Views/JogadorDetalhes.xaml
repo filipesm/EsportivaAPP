@@ -4,19 +4,27 @@
              xmlns:vm="clr-namespace:App2.ViewModel"
              x:Class="App2.Views.JogadorDetalhes"
              Title="Detalhes do Jogador">
+
+
     <ContentPage.BindingContext>
         <vm:JogadorDetalhesViewModel></vm:JogadorDetalhesViewModel>
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Nome"></Label>
-            <Entry Text="{Binding Jogador.Name}" Placeholder="Nome"></Entry>
-            <Label Text="Ano de Nascimento"></Label>
-            <Entry Text="{Binding Jogador.Year}" Placeholder="Ano de Nascimento"></Entry>
-            <Label Text="Cor Preferida"></Label>
-            <Entry Text="{Binding Jogador.Color}" Placeholder="Cor Preferida"></Entry>
-            <Button Text="Verificar meu ID" Command="{Binding ChecarIdCommand}"></Button>
-            <Button Text="Voltar" Command="{Binding VoltarCommand}"></Button>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" VerticalOptions="Center" Margin="40,0,40,0">
+                <Label Text="{Binding JogadorSalesForceModel.Id}" HorizontalTextAlignment="Center"></Label>
+                <Label Text="{Binding JogadorSalesForceModel.Name}" HorizontalTextAlignment="Center"></Label>
+                <Label Text="{Binding JogadorSalesForceModel.Sobrenome__c}" HorizontalTextAlignment="Center"></Label>
+                <Label Text="{Binding JogadorSalesForceModel.Data_de_nascimento__c}" HorizontalTextAlignment="Center"></Label>
+                <Label Text="{Binding JogadorSalesForceModel.Altura__c}" HorizontalTextAlignment="Center"></Label>
+                <Label Text="Campos que podem ser atualizados abaixo" HorizontalTextAlignment="Center"></Label>
+                <Entry Text="{Binding JogadorSalesForceModel.Posicao__c}" Placeholder="Nome" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForceModel.Apelido__c}" Placeholder="Ano de Nascimento" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForceModel.Numero_na_camisa__c}" Placeholder="Cor Preferida" HorizontalTextAlignment="Center"></Entry>
+                <Button Text="Verificar meu ID" Command="{Binding ChecarIdCommand}"></Button>
+                <Button Text="Voltar" Command="{Binding VoltarCommand}"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

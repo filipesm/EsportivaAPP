@@ -17,60 +17,60 @@ namespace App2.Model
         }
         #endregion
 
-        private string nome;
+        private string name;
 
-        public string Nome
+        public string Name
         {
-            get { return nome; }
-            set { if (nome != value) nome = value; NotifyPropertyChanged(); }
+            get { return name; }
+            set { if (name != value) name = value; NotifyPropertyChanged(); }
         }
 
-        private string sigla;
+        private string sigla__c;
 
-        public string Sigla
+        public string Sigla__c
         {
-            get { return sigla; }
-            set { if (sigla != value) sigla = value; NotifyPropertyChanged(); }
+            get { return sigla__c; }
+            set { if (sigla__c != value) sigla__c = value; NotifyPropertyChanged(); }
         }
 
-        private string cor1;
+        private string cor1__c;
 
-        public string Cor1
+        public string Cor1__c
         {
-            get { return cor1; }
-            set { if (cor1 != value) cor1 = value; NotifyPropertyChanged(); }
+            get { return cor1__c; }
+            set { if (cor1__c != value) cor1__c = value; NotifyPropertyChanged(); }
         }
 
-        private string cor2;
+        private string cor2__c;
 
-        public string Cor2
+        public string Cor2__c
         {
-            get { return cor2; }
-            set { if (cor2 != value) cor2 = value; NotifyPropertyChanged(); }
+            get { return cor2__c; }
+            set { if (cor2__c != value) cor2__c = value; NotifyPropertyChanged(); }
         }
 
-        private string cor3;
+        private string cor3__c;
 
-        public string Cor3
+        public string Cor3__c
         {
-            get { return cor3; }
-            set { if (cor3 != value) cor3 = value; NotifyPropertyChanged(); }
+            get { return cor3__c; }
+            set { if (cor3__c != value) cor3__c = value; NotifyPropertyChanged(); }
         }
 
-        private string nacionalidade;
+        private string nacionalidade__c;
 
-        public string Nacionalidade
+        public string Nacionalidade__c
         {
-            get { return nacionalidade; }
-            set { if (nacionalidade != value) nacionalidade = value; NotifyPropertyChanged(); }
+            get { return nacionalidade__c; }
+            set { if (nacionalidade__c != value) nacionalidade__c = value; NotifyPropertyChanged(); }
         }
 
-        private string dataDeFundacao;
+        private string dataDeFundacao__c;
 
-        public string DataDeFundacao
+        public string Data_De_Fundacao__c
         {
-            get { return dataDeFundacao; }
-            set { if (dataDeFundacao != value) dataDeFundacao = value; NotifyPropertyChanged(); }
+            get { return dataDeFundacao__c; }
+            set { if (dataDeFundacao__c != value) dataDeFundacao__c = value; NotifyPropertyChanged(); }
         }
     }
 }

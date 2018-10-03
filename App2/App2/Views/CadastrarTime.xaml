@@ -10,13 +10,13 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding TimeModel.Nome}" Placeholder="Nome"></Entry>
-            <Entry Text="{Binding TimeModel.Sigla}" Placeholder="Sigla"></Entry>
-            <Entry Text="{Binding TimeModel.Cor1}" Placeholder="Cor1"></Entry>
-            <Entry Text="{Binding TimeModel.Cor2}" Placeholder="Cor2"></Entry>
-            <Entry Text="{Binding TimeModel.Cor3}" Placeholder="Cor3"></Entry>
-            <Entry Text="{Binding TimeModel.Nacionalidade}" Placeholder="Nacionalidade"></Entry>
-            <Entry Text="{Binding TimeModel.DataDeFundacao}" Placeholder="DataDeFundacao"></Entry>
+            <Entry Text="{Binding TimeModel.Name}" Placeholder="Nome"></Entry>
+            <Entry Text="{Binding TimeModel.Sigla__c}" Placeholder="Sigla"></Entry>
+            <Entry Text="{Binding TimeModel.Cor1__c}" Placeholder="Cor1"></Entry>
+            <Entry Text="{Binding TimeModel.Cor2__c}" Placeholder="Cor2"></Entry>
+            <Entry Text="{Binding TimeModel.Cor3__c}" Placeholder="Cor3"></Entry>
+            <Entry Text="{Binding TimeModel.Nacionalidade__c}" Placeholder="Nacionalidade"></Entry>
+            <Entry Text="{Binding TimeModel.Data_De_Fundacao__c}" Placeholder="DataDeFundacao"></Entry>
             <Button Text="Cadastrar Time" Command="{Binding CadastrarTimeCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

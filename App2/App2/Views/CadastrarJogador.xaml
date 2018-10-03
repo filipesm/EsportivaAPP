@@ -11,15 +11,15 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Entry Text="{Binding JogadorSalesForce.Nome}" Placeholder="Nome"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.SobreNome}" Placeholder="SobreNome"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Posicao}" Placeholder="Posicao"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Nascimento}" Placeholder="00/00/1000"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Time}" Placeholder="São Paulo"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.NumeroCamisa}" Placeholder="Numero da camisa"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Apelido}" Placeholder="Apelido"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Altura}" Placeholder="Altura"></Entry>
+            <StackLayout Margin="40,0,40,0">
+                <Entry Text="{Binding JogadorSalesForce.Name}" Placeholder="Nome" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Sobrenome__c}" Placeholder="SobreNome" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Posicao__c}" Placeholder="Posicao" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Data_de_nascimento__c}" Placeholder="00/00/1000" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Time__c}" Placeholder="São Paulo" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Numero_na_camisa__c}" Placeholder="Numero da camisa" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Apelido__c}" Placeholder="Apelido" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Altura__c}" Placeholder="Altura" HorizontalTextAlignment="Center"></Entry>
                 <Button Text="Cadastrar" Command="{Binding CadastrarCommand}"></Button>
             </StackLayout>
         </ScrollView>

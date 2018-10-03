@@ -20,7 +20,6 @@ namespace App2.ViewModel
 
             CadastrarCommand = new Command(() =>
             {
-                App.MensagemAlerta($"{JogadorSalesForce.Nome},{JogadorSalesForce.NumeroCamisa} ,{JogadorSalesForce.Posicao}");
                 new JogadoresBusiness().SaveJogador(JogadorSalesForce);
             });
         }

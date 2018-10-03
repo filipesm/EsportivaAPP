@@ -46,12 +46,13 @@ namespace App2.Views
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<DateModel>(new JogadorDetalhes(), "JogadorDetalhesAbrir", (sender) =>
+            MessagingCenter.Subscribe<JogadorSalesForceModel>(new JogadorDetalhes(), "JogadorDetalhesAbrir", (sender) =>
             {
-                Global.Jogador = sender;
+                Global.JogadorSalesForceModel = sender;
                 Detail = new NavigationPage(new JogadorDetalhes());
                 IsPresented = false;
-            });
+            }
+            );
 
         }
         protected override void OnDisappearing()
@@ -61,6 +62,7 @@ namespace App2.Views
             MessagingCenter.Unsubscribe<Jogadores>(this, "JogadoresAbrir");
             MessagingCenter.Unsubscribe<CadastrarJogador>(this, "CadastrarJogadorAbrir");
             MessagingCenter.Unsubscribe<CadastrarTime>(this, "CadastrarTimeAbrir");
+            MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "CadastrarPartidaAbrir");
             MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "JogadorDetalhesAbrir");
         }
     }

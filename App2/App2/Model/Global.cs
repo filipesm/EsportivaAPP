@@ -6,6 +6,7 @@ namespace App2.Model
 {
     public class Global
     {
-        public static DateModel Jogador { get; set; }
+        public static JogadorSalesForceModel JogadorSalesForceModel { get; set; }
+        public static TokenSalesForceModel TokenSalesForce { get; set; }
     }
 }
