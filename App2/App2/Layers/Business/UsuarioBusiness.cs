@@ -8,14 +8,14 @@ namespace App2.Layers.Business
 {
     public class UsuarioBusiness
     {
-        public TokenModel Login(string usuario, string senha)
+        public string Login(string usuario, string senha)
         {
-            var token = new UsuarioService().GetUserAPI(usuario, senha);
+            var timeId = new UsuarioService().GetUserAPI(usuario, senha);
 
-            if (token.Token == null)
+            if (timeId == null)
                 throw new Exception("Usuário não encontrado");
 
-            return token;
+            return timeId;
         }
     }
 }

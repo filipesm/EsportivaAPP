@@ -21,7 +21,8 @@ namespace App2
         protected override void OnStart()
         {
             Global.TokenSalesForce = new GenerateTokenBusiness().GetTokenFromSalesForce();
-            MessagingCenter.Subscribe<LoginViewModel>(new LoginViewModel(), "LoginSucesso", (sender) =>
+
+            MessagingCenter.Subscribe<LoginViewModel>(this, "LoginSucesso", (sender) =>
             {
                 MainPage = new Principal();
             });

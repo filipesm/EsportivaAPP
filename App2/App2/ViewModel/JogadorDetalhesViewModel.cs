@@ -1,4 +1,5 @@
-﻿using App2.Model;
+﻿using App2.Layers.Business;
+using App2.Model;
 using App2.Views;
 using System;
 using System.Collections.Generic;
@@ -29,20 +30,35 @@ namespace App2.ViewModel
             set { if (jogadorSalesForceModel != value) jogadorSalesForceModel = value; NotifyPropertyChanged(); }
         }
 
-        public ICommand ChecarIdCommand { get; set; }
-        public ICommand VoltarCommand { get; set; }
+        public ICommand UpdateCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
         public JogadorDetalhesViewModel()
         {
             JogadorSalesForceModel = Global.JogadorSalesForceModel;
 
-            ChecarIdCommand = new Command(() =>
+            UpdateCommand = new Command(() =>
             {
-                App.MensagemAlerta($"{JogadorSalesForceModel.Name}, {JogadorSalesForceModel.Apelido__c}, {JogadorSalesForceModel.Posicao__c}");
+                try
+                {
+                    new JogadoresBusiness().UpdateJogador(JogadorSalesForceModel);
+
+                    App.MensagemAlerta("Jogador atualizado com sucesso");
+
+                    MessagingCenter.Send("", "JogadoresAbrir");
+                }
+                catch (Exception ex)
+                {
+                    App.MensagemAlerta($"Deu ruim \n{ex.Message}");
+                }
             });
 
-            VoltarCommand = new Command(() =>
+            DeleteCommand = new Command(() =>
             {
-                MessagingCenter.Send(new Jogadores(), "JogadoresAbrir");
+                new JogadoresBusiness().DeleteJogador(JogadorSalesForceModel.Id);
+
+                App.MensagemAlerta("Jogador excluido com sucesso");
+
+                MessagingCenter.Send("", "JogadoresAbrir");
             });
         }
     }

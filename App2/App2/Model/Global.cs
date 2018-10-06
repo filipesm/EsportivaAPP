@@ -8,5 +8,6 @@ namespace App2.Model
     {
         public static JogadorSalesForceModel JogadorSalesForceModel { get; set; }
         public static TokenSalesForceModel TokenSalesForce { get; set; }
+        public static string TimeId { get; set; }
     }
 }

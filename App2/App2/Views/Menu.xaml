@@ -6,7 +6,6 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Jogadores" Clicked="BotaoJogadoresClicked"></Button>
-            <Button Text="Cadastrar Jogador" Clicked="CadastrarJogadorClicked"></Button>
             <Button Text="Cadastrar Time" Clicked="CadastrarTimeClicked"></Button>
             <Button Text="Cadastrar Partida" Clicked="CadastrarPartidaClicked"></Button>
         </StackLayout>

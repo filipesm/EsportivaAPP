@@ -1,4 +1,5 @@
 ﻿using App2.Model;
+using App2.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,37 +23,36 @@ namespace App2.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Jogadores>(new Jogadores(), "JogadoresAbrir", (sender) =>
+            MessagingCenter.Subscribe<string>(this, "JogadoresAbrir", (sender) =>
             {
                 Detail = new NavigationPage(new Jogadores());
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<CadastrarJogador>(new CadastrarJogador(), "CadastrarJogadorAbrir", (sender) =>
+            MessagingCenter.Subscribe<JogadoresViewModel>(this, "CadastrarJogadorAbrir", (sender) =>
             {
                 Detail = new NavigationPage(new CadastrarJogador());
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<CadastrarTime>(new CadastrarTime(), "CadastrarTimeAbrir", (sender) =>
-            {
-                Detail = new NavigationPage(new CadastrarTime());
-                IsPresented = false;
-            });
+            //MessagingCenter.Subscribe<Menu>(this, "CadastrarTimeAbrir", (sender) =>
+            //{
+            //    Detail = new NavigationPage(new CadastrarTime());
+            //    IsPresented = false;
+            //});
 
-            MessagingCenter.Subscribe<CadastrarPartida>(new CadastrarPartida(), "CadastrarPartidaAbrir", (sender) =>
+            MessagingCenter.Subscribe<Menu>(this, "CadastrarPartidaAbrir", (sender) =>
             {
                 Detail = new NavigationPage(new CadastrarPartida());
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<JogadorSalesForceModel>(new JogadorDetalhes(), "JogadorDetalhesAbrir", (sender) =>
+            MessagingCenter.Subscribe<JogadorSalesForceModel>(this, "JogadorDetalhesAbrir", (sender) =>
             {
                 Global.JogadorSalesForceModel = sender;
                 Detail = new NavigationPage(new JogadorDetalhes());
                 IsPresented = false;
-            }
-            );
+            });
 
         }
         protected override void OnDisappearing()

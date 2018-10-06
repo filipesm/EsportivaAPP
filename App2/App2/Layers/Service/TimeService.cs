@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using App2.Model;
+using App2.Utils;
 using Newtonsoft.Json;
 
 namespace App2.Layers.Service
@@ -18,9 +19,7 @@ namespace App2.Layers.Service
         {
             var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/Time__c";
 
-            var arrayData = timeModel.Data_De_Fundacao__c.Split('/');
-
-            timeModel.Data_De_Fundacao__c = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0];
+            timeModel.Data_De_Fundacao__c = DateConverter.ConvertDateToSalesForce(timeModel.Data_De_Fundacao__c);
 
             var _body = JsonConvert.SerializeObject(timeModel);
 

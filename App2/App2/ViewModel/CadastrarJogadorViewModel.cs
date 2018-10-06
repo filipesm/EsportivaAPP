@@ -21,6 +21,10 @@ namespace App2.ViewModel
             CadastrarCommand = new Command(() =>
             {
                 new JogadoresBusiness().SaveJogador(JogadorSalesForce);
+
+                MessagingCenter.Send("", "JogadoresAbrir");
+
+                App.MensagemAlerta($"{JogadorSalesForce.Name} cadastrado com sucesso");
             });
         }
     }

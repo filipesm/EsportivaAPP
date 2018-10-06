@@ -39,6 +39,7 @@ namespace App2.ViewModel
         }
 
         public ICommand JogadorTappedCommand { get; set; }
+        public ICommand CadastrarJogadorClicked { get; set; }
 
         public JogadoresViewModel()
         {
@@ -47,6 +48,11 @@ namespace App2.ViewModel
             JogadorTappedCommand = new Command(() =>
             {
                 MessagingCenter.Send(JogadorSelecionado, "JogadorDetalhesAbrir");
+            });
+
+            CadastrarJogadorClicked = new Command(() =>
+            {
+                MessagingCenter.Send(this, "CadastrarJogadorAbrir");
             });
         }
     }

@@ -18,22 +18,17 @@ namespace App2.Views
         }
         private void BotaoJogadoresClicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(new Jogadores(), "JogadoresAbrir");
-        }
-
-        private void CadastrarJogadorClicked(object sender, EventArgs e)
-        {
-            MessagingCenter.Send(new CadastrarJogador(), "CadastrarJogadorAbrir");
+            MessagingCenter.Send("", "JogadoresAbrir");
         }
 
         private void CadastrarTimeClicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(new CadastrarTime(), "CadastrarTimeAbrir");
+            MessagingCenter.Send(this, "CadastrarTimeAbrir");
         }
 
         private void CadastrarPartidaClicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(new CadastrarPartida(), "CadastrarPartidaAbrir");
+            MessagingCenter.Send(this, "CadastrarPartidaAbrir");
         }
     }
 }

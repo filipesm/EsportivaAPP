@@ -9,19 +9,22 @@
     <ContentPage.BindingContext>
         <vm:JogadoresViewModel></vm:JogadoresViewModel>
     </ContentPage.BindingContext>
-
+    
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Jogadores}" HasUnevenRows="true" SelectedItem="{Binding JogadorSelecionado}" tapped:ItemTappedAttached.Command="{Binding JogadorTappedCommand}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" Orientation="Horizontal">
-                            <Label FontSize="Large" Text="{Binding Apelido__c}" FontAttributes="Bold" ></Label>
-                            <Label FontSize="Large" Text="{Binding Numero_na_camisa__c}" FontAttributes="Bold" ></Label>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <Button Text="Cadastrar Jogador" Command="{Binding CadastrarJogadorClicked}"></Button>
+            <ListView ItemsSource="{Binding Jogadores}" HasUnevenRows="true" SelectedItem="{Binding JogadorSelecionado}" tapped:ItemTappedAttached.Command="{Binding JogadorTappedCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" Orientation="Horizontal">
+                                <Label FontSize="Large" Text="{Binding Apelido__c}" FontAttributes="Bold" ></Label>
+                                <Label FontSize="Large" Text="{Binding Numero_na_camisa__c}" FontAttributes="Bold" ></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

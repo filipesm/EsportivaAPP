@@ -20,7 +20,7 @@ namespace App2.Model
 
         private string id;
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public string Id
         {
             get { return id; }

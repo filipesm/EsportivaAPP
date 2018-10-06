@@ -1,4 +1,5 @@
 ﻿using App2.Model;
+using App2.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -14,12 +15,12 @@ namespace App2.Layers.Service
     {
         public string GetJogadoresFromSalesForce()
         {
-            var uri = "https://na49.salesforce.com/services/data/v43.0/sobjects/Time__c/a015A00000kEv6SQAS/Jogadores__r";
+            var _urlAccountApi = $"https://na49.salesforce.com/services/data/v43.0/sobjects/Time__c/{Global.TimeId}/Jogadores__r";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Global.TokenSalesForce.access_token);
 
-            var resposta = client.GetAsync(uri).Result;
+            var resposta = client.GetAsync(_urlAccountApi).Result;
 
             if (resposta.IsSuccessStatusCode)
             {
@@ -38,9 +39,9 @@ namespace App2.Layers.Service
         {
             var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/Jogador__c";
 
-            var arrayData = jogadorSalesForce.Data_de_nascimento__c.Split('/');
+            jogadorSalesForce.Data_de_nascimento__c = DateConverter.ConvertDateToSalesForce(jogadorSalesForce.Data_de_nascimento__c);
 
-            jogadorSalesForce.Data_de_nascimento__c = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0];
+            jogadorSalesForce.Time__c = Global.TimeId;
 
             var _body = JsonConvert.SerializeObject(jogadorSalesForce);
 
@@ -61,5 +62,52 @@ namespace App2.Layers.Service
             }
 
         }
+
+        public void UpdateJogadorOnSalesForce(JogadorSalesForceModel jogadorSalesForceModel)
+        {
+            var _urlAccountApi = $"https://na49.salesforce.com/services/data/v43.0/sobjects/Jogador__c/{jogadorSalesForceModel.Id}";
+
+            var _body = JsonConvert.SerializeObject(
+                new
+                {
+                    jogadorSalesForceModel.Apelido__c,
+                    Numero_na_camisa__c = jogadorSalesForceModel.Numero_na_camisa__c.ToString(),
+                    jogadorSalesForceModel.Posicao__c
+                });
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Global.TokenSalesForce.access_token);
+
+            StringContent _conteudo = new StringContent(_body, Encoding.UTF8, "application/json");
+
+            HttpRequestMessage request = new HttpRequestMessage
+            {
+                Method = new HttpMethod("PATCH"),
+                RequestUri = new Uri(client.BaseAddress + _urlAccountApi),
+                Content = _conteudo,
+            };
+
+            var response = client.SendAsync(request);
+            var result = response.Result;
+        }
+
+        public void DeleteJogadorOnSalesForce(string id)
+        {
+            var _urlAccountApi = $"https://na49.salesforce.com/services/data/v43.0/sobjects/Jogador__c/{id}";
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Global.TokenSalesForce.access_token);
+
+            var response = client.DeleteAsync(_urlAccountApi);
+
+            var result = response.Result;
+
+        }
+
+
     }
 }
+
+
+
+

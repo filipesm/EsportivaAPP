@@ -16,26 +16,28 @@ namespace App2.ViewModel
         {
             Usuario = new UsuarioModel
             {
-                Usuario = "peter@klaven",
-                Senha = "cityslicka"
+                Usuario = "root",
+                Senha = "root"
             };
 
             LoginClickedCommand = new Command(() =>
             {
+
+                var timeId = new UsuarioBusiness().Login(Usuario.Usuario, Usuario.Senha);
+
                 try
                 {
-                    var token = new UsuarioBusiness().Login(Usuario.Usuario, Usuario.Senha);
-
-                    if (token != null)
+                    if (timeId != null)
                     {
-                        MessagingCenter.Send(new LoginViewModel(), "LoginSucesso");
+                        MessagingCenter.Send(this, "LoginSucesso");
                     }
-
                 }
                 catch (Exception ex)
                 {
+
                     App.MensagemAlerta(ex.Message);
                 }
+
             });
         }
     }

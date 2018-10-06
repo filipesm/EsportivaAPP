@@ -33,5 +33,15 @@ namespace App2.Layers.Business
         {
             new JogadoresService().SaveJogadoresOnSalesForce(jogadorSalesForce);
         }
+
+        public void UpdateJogador(JogadorSalesForceModel jogadorSalesForceModel)
+        {
+            new JogadoresService().UpdateJogadorOnSalesForce(jogadorSalesForceModel);
+        }
+
+        internal void DeleteJogador(string id)
+        {
+            new JogadoresService().DeleteJogadorOnSalesForce(id);
+        }
     }
 }
