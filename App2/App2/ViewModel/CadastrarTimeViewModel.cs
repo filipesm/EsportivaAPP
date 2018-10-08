@@ -32,10 +32,10 @@ namespace App2.ViewModel
 
             });
 
-            VoltarCommand = new Command(() =>
-            {
-                MessagingCenter.Send(new Jogadores(), "JogadoresAbrir");
-            });
+            //VoltarCommand = new Command(() =>
+            //{
+            //    MessagingCenter.Send(new Jogadores(), "JogadoresAbrir");
+            //});
         }
     }
 }
