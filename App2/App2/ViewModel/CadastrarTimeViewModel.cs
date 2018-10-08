@@ -21,8 +21,15 @@ namespace App2.ViewModel
 
             CadastrarTimeCommand = new Command(() =>
             {
-                new TimeBusiness().SaveTime(TimeModel);
-                TimeModel = new TimeModel();
+                var timeId = new TimeBusiness().SaveTime(TimeModel);
+
+                if (timeId != null)
+                    new UsuarioBusiness().Register(timeId);
+
+                Global.Usuario = null;
+
+                MessagingCenter.Send("", "LoginSucesso");
+
             });
 
             VoltarCommand = new Command(() =>

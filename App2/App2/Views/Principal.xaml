@@ -7,7 +7,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <pages:Jogadores />
+                <pages:DetalhesTime />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

@@ -52,29 +52,5 @@ namespace App2.Layers.Business
             }
 
         }
-
-        //private static void InvokeSalesForceAccountApi(string _accessToken)
-        //{
-        //    var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/";
-
-        //    var _body = "{ \"Name\" : \"Flavio 3SIA C# 3.0\" }";
-
-        //    StringContent _conteudo = new StringContent(_body, Encoding.UTF8, "application/json");
-
-        //    HttpClient client = new HttpClient();
-        //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
-        //    var response = client.PostAsync(_urlAccountApi, _conteudo).Result;
-
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var conteudoResposta = response.Content.ReadAsStringAsync().Result;
-        //        dynamic json = JsonConvert.DeserializeObject(conteudoResposta);
-
-        //    }
-        //    else
-        //    {
-        //        throw new Exception(response.ReasonPhrase);
-        //    }
-        //}
     }
 }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             xmlns:tapped="clr-namespace:App2.Views.ComponentsComponents"
+             x:Class="App2.Views.Partidas">
+
+    <ContentPage.BindingContext>
+        <vm:PartidaViewModel></vm:PartidaViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Cadastrar partida" Command="{Binding CadastrarPartidaClicked}"></Button>
+            <ListView ItemsSource="{Binding Partidas}" HasUnevenRows="true" SelectedItem="{Binding PartidaSelecionada}" tapped:ItemTappedAttached.Command="{Binding PartidaTappedCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" Orientation="Vertical">
+                                <Label FontSize="Large" Text="{Binding Name}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                <Label FontSize="Small" Text="{Binding Data_da_partida__c}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

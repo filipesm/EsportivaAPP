@@ -20,15 +20,13 @@ namespace App2.Views
         {
             MessagingCenter.Send("", "JogadoresAbrir");
         }
-
-        private void CadastrarTimeClicked(object sender, EventArgs e)
+        private void VerPartidasClicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "CadastrarTimeAbrir");
+            MessagingCenter.Send("", "VerPartidasAbrir");
         }
-
-        private void CadastrarPartidaClicked(object sender, EventArgs e)
+        private void DetalhesTimeClicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "CadastrarPartidaAbrir");
+            MessagingCenter.Send(this, "DetalhesTimeAbrir");
         }
     }
 }

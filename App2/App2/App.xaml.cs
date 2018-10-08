@@ -22,9 +22,14 @@ namespace App2
         {
             Global.TokenSalesForce = new GenerateTokenBusiness().GetTokenFromSalesForce();
 
-            MessagingCenter.Subscribe<LoginViewModel>(this, "LoginSucesso", (sender) =>
+            MessagingCenter.Subscribe<string>(this, "LoginSucesso", (sender) =>
             {
                 MainPage = new Principal();
+            });
+
+            MessagingCenter.Subscribe<LoginViewModel>(this, "CadastrarTimeAbrir", (sender) =>
+            {
+                MainPage = new CadastrarTime();
             });
         }
 

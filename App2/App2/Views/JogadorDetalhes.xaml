@@ -12,8 +12,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="10" VerticalOptions="Center" Margin="40,0,40,0">
-                <Label Text="{Binding JogadorSalesForceModel.Id}" HorizontalTextAlignment="Center"></Label>
+            <StackLayout Padding="10" VerticalOptions="Center" HorizontalOptions="Center" Margin="40,0,40,0">
                 <Label Text="{Binding JogadorSalesForceModel.Name}" HorizontalTextAlignment="Center"></Label>
                 <Label Text="{Binding JogadorSalesForceModel.Sobrenome__c}" HorizontalTextAlignment="Center"></Label>
                 <Label Text="{Binding JogadorSalesForceModel.Data_de_nascimento__c}" HorizontalTextAlignment="Center"></Label>
@@ -22,8 +21,8 @@
                 <Entry Text="{Binding JogadorSalesForceModel.Posicao__c}" Placeholder="Posição" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForceModel.Apelido__c}" Placeholder="Apelido" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForceModel.Numero_na_camisa__c}" Placeholder="Número da Camisa" HorizontalTextAlignment="Center"></Entry>
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Atualizar" BackgroundColor="DeepSkyBlue" Command="{Binding UpdateCommand}"></Button>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Atualizar" BackgroundColor="SteelBlue" Command="{Binding UpdateCommand}"></Button>
                     <Button Text="Deletar" FontAttributes="Bold" BackgroundColor="IndianRed" Command="{Binding DeleteCommand}"></Button>
                 </StackLayout>
             </StackLayout>

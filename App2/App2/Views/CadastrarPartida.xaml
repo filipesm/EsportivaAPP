@@ -9,15 +9,10 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding PartidaModel.NomeParitda}"></Entry>
-            <Entry Text="{Binding PartidaModel.Data}"></Entry>
-            <Entry Text="{Binding PartidaModel.Hora}"></Entry>
-            <Entry Text="{Binding PartidaModel.Time1}"></Entry>
-            <Entry Text="{Binding PartidaModel.Time2}"></Entry>
-            <Entry Text="{Binding PartidaModel.LocalCompeticao}"></Entry>
-            <Entry Text="{Binding PartidaModel.Competicao}"></Entry>
-            <Entry Text="{Binding PartidaModel.Escalacao1}"></Entry>
-            <Entry Text="{Binding PartidaModel.Escalacao2}"></Entry>
+            <Entry Text="{Binding PartidaModel.Name}" Placeholder="Nome do outro time"></Entry>
+            <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="00/00/0000"></Entry>
+            <Entry Text="{Binding PartidaModel.Local_competicao__c}" Placeholder="Onde ocorreu ?"></Entry>
+            <Entry Text="{Binding PartidaModel.Competicao__C}" Placeholder="Campeonato"></Entry>
             <Button Text="Cadastrar Partida" Command="{Binding CadastrarTimeCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

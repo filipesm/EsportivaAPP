@@ -17,5 +17,14 @@ namespace App2.Layers.Business
 
             return timeId;
         }
+        public bool Check(string usuario)
+        {
+            return new UsuarioService().CheckUserOnSalesforce(usuario);
+        }
+        public void Register(string timeId)
+        {
+            new UsuarioService().RegisterUserOnSalesforce(timeId);
+
+        }
     }
 }

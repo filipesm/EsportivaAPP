@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             x:Class="App2.Views.DetalhesTime"
+             Title="Detalhes do Time">
+
+    <ContentPage.BindingContext>
+        <vm:DetalhesTimeViewModel></vm:DetalhesTimeViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="{Binding DetalhesTime.Nome}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Cartões" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="Amarelo" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Cartao_amarelo}" HorizontalOptions="Center"></Label>
+                            <Label Text="Vermelho" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Cartao_vermelho}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Chutes" HorizontalOptions="Center"></Label>
+                            <Label Text="Para Fora" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Chute_para_fora}" HorizontalOptions="Center"></Label>
+                            <Label Text="Ao Gol" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Chute_para_gol}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Cruzamentos" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Cruzamento}" HorizontalOptions="Center"></Label>
+                            <Label Text="Defesa" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Defesa}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Dribles" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Drible}" HorizontalOptions="Center"></Label>
+                            <Label Text="Desarmes" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Tomada_de_bola}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Faltas" HorizontalOptions="Center"></Label>
+                            <Label Text="Cometidas" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Falta_cometida}" HorizontalOptions="Center"></Label>
+                            <Label Text="Sofridas" HorizontalOptions="Center" FontSize="Small"></Label>
+                            <Label Text="{Binding DetalhesTime.Falta_tomada}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Gols" HorizontalOptions="Center"></Label>
+                            <Label Text="Feitos" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Gol}" HorizontalOptions="Center"></Label>
+                            <Label Text="Sofridos" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Gol_tomado}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
+                        <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Passes" HorizontalOptions="Center"></Label>
+                            <Label Text="Concluidos" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Passe_certo}" HorizontalOptions="Center"></Label>
+                            <Label Text="Interceptados" HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding DetalhesTime.Passe_errado}" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+        
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>	

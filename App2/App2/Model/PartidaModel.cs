@@ -18,75 +18,51 @@ namespace App2.Model
 
         #endregion
 
-        private string nomePartida;
+        private string id;
 
-        public string NomeParitda
+        public string Id
         {
-            get { return nomePartida; }
-            set { if (nomePartida != value) nomePartida = value; NotifyPropertyChanged(); }
+            get { return id; }
+            set { if (id != value) id = value; NotifyPropertyChanged(); }
         }
 
-        private string data;
+        private string name;
 
-        public string Data
+        public string Name
         {
-            get { return data; }
-            set { if (data != value) data = value; NotifyPropertyChanged(); }
+            get { return name; }
+            set { if (name != value) name = value; NotifyPropertyChanged(); }
         }
 
-        private string hora;
+        private string data_da_partida__c;
 
-        public string Hora
+        public string Data_da_partida__c
         {
-            get { return hora; }
-            set { if (hora != value) hora = value; NotifyPropertyChanged(); }
+            get { return data_da_partida__c; }
+            set { if (data_da_partida__c != value) data_da_partida__c = value; NotifyPropertyChanged(); }
         }
 
-        private string time1;
+        private string time_1__C;
 
-        public string Time1
+        public string Time_1__C
         {
-            get { return time1; }
-            set { if (time1 != value) time1 = value; NotifyPropertyChanged(); }
+            get { return time_1__C; }
+            set { if (time_1__C != value) time_1__C = value; NotifyPropertyChanged(); }
         }
 
-        private string time2;
+        private string local_competicao__c;
 
-        public string Time2
+        public string Local_competicao__c
         {
-            get { return time2; }
-            set { if (time2 != value) time2 = value; NotifyPropertyChanged(); }
+            get { return local_competicao__c; }
+            set { if (local_competicao__c != value) local_competicao__c = value; NotifyPropertyChanged(); }
         }
+        private string competicao__C;
 
-        private string localCompeticao;
-
-        public string LocalCompeticao
+        public string Competicao__C
         {
-            get { return localCompeticao; }
-            set { if (localCompeticao != value) localCompeticao = value; NotifyPropertyChanged(); }
-        }
-        private string competicao;
-
-        public string Competicao
-        {
-            get { return competicao; }
-            set { if (competicao != value) competicao = value; NotifyPropertyChanged(); }
-        }
-
-        private string escalacao1;
-
-        public string Escalacao1
-        {
-            get { return escalacao1; }
-            set { if (escalacao1 != value) escalacao1 = value; NotifyPropertyChanged(); }
-        }
-
-        private string escalacao2;
-
-        public string Escalacao2
-        {
-            get { return escalacao2; }
-            set { if (escalacao2 != value) escalacao2 = value; NotifyPropertyChanged(); }
+            get { return competicao__C; }
+            set { if (competicao__C != value) competicao__C = value; NotifyPropertyChanged(); }
         }
     }
 

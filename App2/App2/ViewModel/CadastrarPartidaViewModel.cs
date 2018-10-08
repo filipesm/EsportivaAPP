@@ -16,10 +16,14 @@ namespace App2.ViewModel
         public CadastrarPartidaViewModel()
         {
             PartidaModel = new PartidaModel();
-            
+
             CadastrarTimeCommand = new Command(() =>
             {
                 new PartidaBusiness().SavePartida(PartidaModel);
+
+                App.MensagemAlerta("Partida salva com sucesso");
+
+                MessagingCenter.Send("", "VerPartidasAbrir");
             });
         }
     }

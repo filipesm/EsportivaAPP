@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App2.ViewModel"
+             x:Class="App2.Views.Acontecimentos"
+             Title="Acontecimentos">
+
+    <ContentPage.BindingContext>
+        <vm:AcontecimentosViewModel></vm:AcontecimentosViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Button Text="Cadastrar partida" Command="{Binding CadastrarPartidaClicked}"></Button>-->
+            <ListView ItemsSource="{Binding Acontecimentos}" HasUnevenRows="true" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" Orientation="Vertical">
+                                <Label FontSize="Large" Text="{Binding Nome_jogador}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                <Label FontSize="Small" Text="{Binding Tempo}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                <Label FontSize="Small" Text="{Binding Tipo}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

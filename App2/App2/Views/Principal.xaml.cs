@@ -35,15 +35,22 @@ namespace App2.Views
                 IsPresented = false;
             });
 
-            //MessagingCenter.Subscribe<Menu>(this, "CadastrarTimeAbrir", (sender) =>
-            //{
-            //    Detail = new NavigationPage(new CadastrarTime());
-            //    IsPresented = false;
-            //});
-
-            MessagingCenter.Subscribe<Menu>(this, "CadastrarPartidaAbrir", (sender) =>
+            MessagingCenter.Subscribe<PartidaViewModel>(this, "CadastrarPartidaAbrir", (sender) =>
             {
                 Detail = new NavigationPage(new CadastrarPartida());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<string>(this, "AcontecimentosAbrir", (sender) =>
+            {
+                Global.PartidaId = sender;
+                Detail = new NavigationPage(new Acontecimentos());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<string>(this, "VerPartidasAbrir", (sender) =>
+            {
+                Detail = new NavigationPage(new Partidas());
                 IsPresented = false;
             });
 
@@ -51,6 +58,12 @@ namespace App2.Views
             {
                 Global.JogadorSalesForceModel = sender;
                 Detail = new NavigationPage(new JogadorDetalhes());
+                IsPresented = false;
+            });
+
+            MessagingCenter.Subscribe<Menu>(this, "DetalhesTimeAbrir", (sender) =>
+            {
+                Detail = new NavigationPage(new DetalhesTime());
                 IsPresented = false;
             });
 
@@ -62,8 +75,10 @@ namespace App2.Views
             MessagingCenter.Unsubscribe<Jogadores>(this, "JogadoresAbrir");
             MessagingCenter.Unsubscribe<CadastrarJogador>(this, "CadastrarJogadorAbrir");
             MessagingCenter.Unsubscribe<CadastrarTime>(this, "CadastrarTimeAbrir");
-            MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "CadastrarPartidaAbrir");
+            MessagingCenter.Unsubscribe<PartidaViewModel>(this, "AcontecimentosAbrir");
+            MessagingCenter.Unsubscribe<PartidaViewModel>(this, "CadastrarPartidaAbrir");
             MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "JogadorDetalhesAbrir");
+            MessagingCenter.Unsubscribe<Menu>(this, "VerPartidasAbrir");
         }
     }
 }

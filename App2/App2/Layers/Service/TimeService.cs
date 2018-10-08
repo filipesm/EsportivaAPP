@@ -6,16 +6,14 @@ using System.Text;
 using App2.Model;
 using App2.Utils;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace App2.Layers.Service
 {
     public class TimeService
     {
-        /// <summary>
-        /// Salva o time na sales force
-        /// </summary>
-        /// <param name="timeModel">Time a ser cadastrado</param>
-        public void SaveTimeOnSalesForce(TimeModel timeModel)
+
+        public string SaveTimeOnSalesForce(TimeModel timeModel)
         {
             var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/Time__c";
 
@@ -33,12 +31,40 @@ namespace App2.Layers.Service
             if (response.IsSuccessStatusCode)
             {
                 var conteudoResposta = response.Content.ReadAsStringAsync().Result;
-                dynamic json = JsonConvert.DeserializeObject(conteudoResposta);
+
+                var json = JsonConvert.DeserializeObject<TimeResponseModel>(conteudoResposta);
+
+                return json.Id;
             }
             else
             {
                 throw new Exception(response.ReasonPhrase);
             }
+        }
+
+        public JObject GetDetalhesTimeSalesForce()
+        {
+            var _urlAccountApi = $"https://na49.salesforce.com/services/apexrest/v1/acontecimentoTime?id={Global.TimeId}";
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Global.TokenSalesForce.access_token);
+
+            var resposta = client.GetAsync(_urlAccountApi).Result;
+
+            if (resposta.IsSuccessStatusCode)
+            {
+                var resultado = resposta.Content.ReadAsStringAsync().Result;
+
+                JToken token = JToken.Parse(resultado);
+
+                return JObject.Parse((string)token);
+            }
+            else
+            {
+                throw new Exception("Perfis não encontrados!");
+            }
+
+
         }
     }
 }
