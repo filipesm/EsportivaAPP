@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Text="{Binding PartidaModel.Name}" Placeholder="Nome do outro time"></Entry>
-            <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="00/00/0000"></Entry>
+            <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="Data que ocorreu"></Entry>
             <Entry Text="{Binding PartidaModel.Local_competicao__c}" Placeholder="Onde ocorreu ?"></Entry>
             <Entry Text="{Binding PartidaModel.Competicao__C}" Placeholder="Campeonato"></Entry>
             <Button Text="Cadastrar Partida" Command="{Binding CadastrarTimeCommand}"></Button>

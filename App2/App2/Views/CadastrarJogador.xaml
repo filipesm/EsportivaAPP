@@ -15,7 +15,7 @@
                 <Entry Text="{Binding JogadorSalesForce.Name}" Placeholder="Nome" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Sobrenome__c}" Placeholder="SobreNome" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Posicao__c}" Placeholder="Posicao" HorizontalTextAlignment="Center"></Entry>
-                <Entry Text="{Binding JogadorSalesForce.Data_de_nascimento__c}" Placeholder="00/00/1000" HorizontalTextAlignment="Center"></Entry>
+                <Entry Text="{Binding JogadorSalesForce.Data_de_nascimento__c}" Placeholder="Data de nascimento" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Numero_na_camisa__c}" Placeholder="Numero da camisa" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Apelido__c}" Placeholder="Apelido" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForce.Altura__c}" Placeholder="Altura" HorizontalTextAlignment="Center"></Entry>
