@@ -10,8 +10,8 @@
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="Center" Margin="50">
-
-            <Image Source="https://www.twistt.net/assets/img/profile-placeholder.png"></Image>
+           
+            <Image Source="logo.png"></Image>
 
             <Entry Placeholder="email@email.com" Text="{Binding Usuario.Usuario}"></Entry>
             <Entry Placeholder="123456" IsPassword="true" Text="{Binding Usuario.Senha}"></Entry>

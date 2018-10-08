@@ -3,6 +3,7 @@ using App2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
@@ -22,6 +23,7 @@ namespace App2.ViewModel
         #endregion
 
         private IList<AcontecimentosModel> acontecimentos;
+        
 
         public IList<AcontecimentosModel> Acontecimentos
         {
@@ -32,6 +34,8 @@ namespace App2.ViewModel
         public AcontecimentosViewModel()
         {
             Acontecimentos = new PartidaBusiness().GetAcontecimentos();
+
+
         }
     }
 }

@@ -27,11 +27,22 @@ namespace App2.Model
 
         private int tempo;
 
+
         public int Tempo
         {
             get { return tempo; }
             set { if (tempo != value) tempo = value; NotifyPropertyChanged(); }
         }
+
+        private string tempoFormatado;
+
+
+        public string TempoFormatado
+        {
+            get { return tempoFormatado; }
+            set { if (tempoFormatado != value) tempoFormatado = value; NotifyPropertyChanged(); }
+        }
+
 
         private string nome_jogador;
 
