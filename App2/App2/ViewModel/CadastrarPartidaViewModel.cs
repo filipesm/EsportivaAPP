@@ -16,7 +16,7 @@ namespace App2.ViewModel
         public CadastrarPartidaViewModel()
         {
             PartidaModel = new PartidaModel();
-
+            
             CadastrarTimeCommand = new Command(() =>
             {
                 new PartidaBusiness().SavePartida(PartidaModel);
