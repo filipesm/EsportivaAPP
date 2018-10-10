@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace App2.ViewModel
 {
@@ -23,7 +24,6 @@ namespace App2.ViewModel
         #endregion
 
         private IList<AcontecimentosModel> acontecimentos;
-        
 
         public IList<AcontecimentosModel> Acontecimentos
         {
@@ -31,11 +31,16 @@ namespace App2.ViewModel
             set { if (acontecimentos != value) acontecimentos = value; NotifyPropertyChanged(); }
         }
 
+        public ICommand CadastrarAcontecimentoClicked { get; private set; }
+
         public AcontecimentosViewModel()
         {
             Acontecimentos = new PartidaBusiness().GetAcontecimentos();
 
-
+            CadastrarAcontecimentoClicked = new Command(() =>
+            {
+                MessagingCenter.Send(this, "CadastrarAcontecimentoClicked");
+            });
         }
     }
 }

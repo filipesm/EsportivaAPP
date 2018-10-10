@@ -67,6 +67,12 @@ namespace App2.Views
                 IsPresented = false;
             });
 
+            MessagingCenter.Subscribe<AcontecimentosViewModel>(this, "CadastrarAcontecimentoClicked", (sender) =>
+            {
+                Detail = new NavigationPage(new CadastrarAcontecimento());
+                IsPresented = false;
+            });
+
         }
         protected override void OnDisappearing()
         {
@@ -79,6 +85,8 @@ namespace App2.Views
             MessagingCenter.Unsubscribe<PartidaViewModel>(this, "CadastrarPartidaAbrir");
             MessagingCenter.Unsubscribe<JogadorDetalhes>(this, "JogadorDetalhesAbrir");
             MessagingCenter.Unsubscribe<Menu>(this, "VerPartidasAbrir");
+            MessagingCenter.Unsubscribe<AcontecimentosViewModel>(this, "CadastrarAcontecimentoClicked");
+            
         }
     }
 }
