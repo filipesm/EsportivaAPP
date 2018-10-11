@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:App2.ViewModel"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
              x:Class="App2.Views.DetalhesTime"
              Title="Detalhes do Time">
 
@@ -12,8 +13,15 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="{Binding DetalhesTime.Nome}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                <StackLayout Orientation="Horizontal">
+                <Label  Text="{Binding DetalhesTime.Nome}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+             
+                    <oxy:PlotView 
+                Model="{Binding Grafico}" 
+                WidthRequest="200" 
+                HeightRequest="200"/>
+               
+                
+                <StackLayout Orientation="Horizontal" >
                     <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Cartões" HorizontalOptions="Center" FontSize="Small"></Label>

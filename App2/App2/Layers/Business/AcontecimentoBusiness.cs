@@ -29,5 +29,10 @@ namespace App2.Layers.Business
 
             return searchResults.ToList();
         }
+
+        public void SaveAcontecimento(CadAcontecimentoModel cadAcontecimento)
+        {
+            new AcontecimentoService().SaveAcontecimentosSalesForce(cadAcontecimento);
+        }
     }
 }

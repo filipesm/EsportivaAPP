@@ -9,8 +9,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Picker Title="Escolha" ItemsSource="{Binding Acontecimentos}" SelectedItem="{Binding CadAcontecimentoModel.partida__c}" ItemDisplayBinding="{Binding Name}" ></Picker>
-            <Picker Title="Escolha" ItemsSource="{Binding Jogadores}" SelectedItem="{Binding CadAcontecimentoModel.Jogador__c}" ItemDisplayBinding="{Binding Apelido__c}" ></Picker>
+            <Picker x:Name="Acontecimento"  Title="Escolha" ItemsSource="{Binding Acontecimentos}" SelectedItem="{Binding CadAcontecimentoModel.Partida__c}" ItemDisplayBinding="{Binding Name}" ></Picker>
+            <Picker x:Name="Jogadores"  Title="Escolha" ItemsSource="{Binding Jogadores}" SelectedItem="{Binding CadAcontecimentoModel.Jogador__c}" ItemDisplayBinding="{Binding Apelido__c}" ></Picker>
             <Entry Text="{Binding CadAcontecimentoModel.Tempo_do_acontecimento__c}"></Entry>
             <Button Command="{Binding CadastrarClickedCommand}" Text="Cadastrar"></Button>
         </StackLayout>

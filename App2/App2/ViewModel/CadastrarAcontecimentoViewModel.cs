@@ -36,6 +36,7 @@ namespace App2.ViewModel
             Jogadores = new JogadoresBusiness().GetJogadores();
             CadastrarClickedCommand = new Command(()=>
             {
+         
                 App.MensagemAlerta($"{CadAcontecimentoModel.Tempo_do_acontecimento__c},{CadAcontecimentoModel.Jogador__c}");
             });
         }
