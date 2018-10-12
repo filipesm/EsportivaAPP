@@ -40,10 +40,15 @@ namespace App2.Layers.Service
         {
             var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/Acontecimento__c";
 
-
-            //cadAcontecimento.Time__c = Global.TimeId;
-
-            var _body = JsonConvert.SerializeObject(cadAcontecimento);
+            var _body = JsonConvert.SerializeObject(
+                new
+                {
+                    Jogador__c = cadAcontecimento.JogadorSalesForceModel.Id,
+                    Partida__c = Global.PartidaId,
+                    cadAcontecimento.Tempo_do_acontecimento__c,
+                    Time__c = Global.TimeId,
+                    AcontecimentoType__c = cadAcontecimento.ListAcontecimentoModel.Id
+                });
 
             StringContent _conteudo = new StringContent(_body, Encoding.UTF8, "application/json");
 

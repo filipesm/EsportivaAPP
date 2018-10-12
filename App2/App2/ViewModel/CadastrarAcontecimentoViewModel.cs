@@ -23,24 +23,28 @@ namespace App2.ViewModel
         #endregion
 
         public List<ListAcontecimentoModel> Acontecimentos { get; set; }
+
         public IList<JogadorSalesForceModel> Jogadores { get; set; }
-        
+
         public CadAcontecimentoModel CadAcontecimentoModel { get; set; }
+
         public ICommand CadastrarClickedCommand { get; private set; }
-    
+
 
         public CadastrarAcontecimentoViewModel()
         {
             CadAcontecimentoModel = new CadAcontecimentoModel();
+
             Acontecimentos = new AcontecimentoBusiness().GetAcontecimento();
+
             Jogadores = new JogadoresBusiness().GetJogadores();
-            CadastrarClickedCommand = new Command(()=>
+
+            CadastrarClickedCommand = new Command(() =>
             {
-         
-                App.MensagemAlerta($"{CadAcontecimentoModel.Tempo_do_acontecimento__c},{CadAcontecimentoModel.Jogador__c}");
+                new AcontecimentoBusiness().SaveAcontecimento(CadAcontecimentoModel);
             });
         }
 
-        
+
     }
 }

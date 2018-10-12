@@ -40,6 +40,23 @@ namespace App2.Model
             set { if (tempo_do_acontecimento__c != value) tempo_do_acontecimento__c = value; NotifyPropertyChanged(); }
         }
 
+        private ListAcontecimentoModel listAcontecimentoModel;
+
+        public ListAcontecimentoModel ListAcontecimentoModel
+        {
+            get { return listAcontecimentoModel; }
+            set { if (listAcontecimentoModel != value) listAcontecimentoModel = value; NotifyPropertyChanged(); }
+        }
+
+        private JogadorSalesForceModel jogadorSalesForceModel;
+
+        public JogadorSalesForceModel JogadorSalesForceModel
+        {
+            get { return jogadorSalesForceModel; }
+            set { if (jogadorSalesForceModel != value) jogadorSalesForceModel= value; NotifyPropertyChanged(); }
+        }
+
+
 
 
 
