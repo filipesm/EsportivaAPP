@@ -12,15 +12,12 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="20">
                 <Label  Text="{Binding DetalhesTime.Nome}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-             
-                    <oxy:PlotView 
-                Model="{Binding Grafico}" 
-                WidthRequest="200" 
-                HeightRequest="200"/>
-               
-                
+
+                <oxy:PlotView Model="{Binding Grafico}" WidthRequest="200" HeightRequest="200" Margin="0,10,0,10"/>
+
+
                 <StackLayout Orientation="Horizontal" >
                     <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">

@@ -1,5 +1,6 @@
 ﻿using App2.Layers.Business;
 using App2.Model;
+using OxyPlot;
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
@@ -34,18 +35,19 @@ namespace App2.ViewModel
             DetalhesTime = new DetalhesTimeModel();
 
             DetalhesTime = new TimeBusiness().GetDetalheTime();
+
             Grafico = GerarGraficoPizza(DetalhesTime);
         }
 
 
-        private OxyPlot.PlotModel GerarGraficoPizza(DetalhesTimeModel detalhes)
+        private PlotModel GerarGraficoPizza(DetalhesTimeModel detalhes)
         {
 
 
 
             var valores = new PieSeries
             {
-                Stroke = OxyPlot.OxyColors.White,
+                Stroke = OxyColors.White,
                 StrokeThickness = 1.0,
                 Diameter = 1.0,
                 InnerDiameter = 0.0,
@@ -60,8 +62,6 @@ namespace App2.ViewModel
                 TickLabelDistance = 1,
                 InsideLabelPosition = 0.5,
                 FontSize = 12,
-
-          
             };
 
             #region validando Valores para o Grafico
@@ -125,11 +125,7 @@ namespace App2.ViewModel
 
             #endregion
 
-
-
-
-
-            var plotModel = new OxyPlot.PlotModel
+            var plotModel = new PlotModel
             {
                 IsLegendVisible = true
             };
@@ -140,7 +136,7 @@ namespace App2.ViewModel
         }
 
         private OxyPlot.PlotModel grafico;
-        public OxyPlot.PlotModel Grafico
+        public PlotModel Grafico
         {
             get
             {
