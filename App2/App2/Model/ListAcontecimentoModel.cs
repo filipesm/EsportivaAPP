@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -23,6 +24,7 @@ namespace App2.Model
 
         private string id;
 
+        [PrimaryKey]
         public string Id
         {
             get { return id; }

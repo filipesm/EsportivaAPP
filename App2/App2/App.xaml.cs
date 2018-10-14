@@ -20,6 +20,11 @@ namespace App2
 
         protected override void OnStart()
         {
+
+            //var _dbConn = new Layers.Data.Config.DBConnection();
+            
+
+
             Global.TokenSalesForce = new GenerateTokenBusiness().GetTokenFromSalesForce();
 
             MessagingCenter.Subscribe<string>(this, "LoginSucesso", (sender) =>
