@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:App2.ViewModel"
+             Title="Cadastrar Time"
              x:Class="App2.Views.CadastrarTime">
 
     <ContentPage.BindingContext>
@@ -9,14 +10,14 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text="{Binding TimeModel.Name}" Placeholder="Nome"></Entry>
-            <Entry Text="{Binding TimeModel.Sigla__c}" Placeholder="Sigla"></Entry>
-            <Entry Text="{Binding TimeModel.Cor1__c}" Placeholder="Cor1"></Entry>
-            <Entry Text="{Binding TimeModel.Cor2__c}" Placeholder="Cor2"></Entry>
-            <Entry Text="{Binding TimeModel.Cor3__c}" Placeholder="Cor3"></Entry>
-            <Entry Text="{Binding TimeModel.Nacionalidade__c}" Placeholder="Nacionalidade"></Entry>
-            <Entry Text="{Binding TimeModel.Data_De_Fundacao__c}" Placeholder="DataDeFundacao"></Entry>
+        <StackLayout Margin="40,0,40,0">
+            <Entry Text="{Binding TimeModel.Name}" Placeholder="Nome" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Sigla__c}" Placeholder="Sigla" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Cor1__c}" Placeholder="Cor1" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Cor2__c}" Placeholder="Cor2" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Cor3__c}" Placeholder="Cor3" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Nacionalidade__c}" Placeholder="Nacionalidade" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding TimeModel.Data_De_Fundacao__c}" Placeholder="DataDeFundacao" HorizontalTextAlignment="Center"></Entry>
             <Button Text="Cadastrar Time" Command="{Binding CadastrarTimeCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

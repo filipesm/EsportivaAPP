@@ -21,15 +21,23 @@ namespace App2.ViewModel
 
             CadastrarTimeCommand = new Command(() =>
             {
-                var timeId = new TimeBusiness().SaveTime(TimeModel);
+                try
+                {
 
-                if (timeId != null)
-                    new UsuarioBusiness().Register(timeId);
 
-                Global.Usuario = null;
+                    var timeId = new TimeBusiness().SaveTime(TimeModel);
 
-                MessagingCenter.Send("", "LoginSucesso");
+                    if (timeId != null)
+                        new UsuarioBusiness().Register(timeId);
 
+                    Global.Usuario = null;
+
+                    MessagingCenter.Send("", "LoginSucesso");
+                }
+                catch(Exception ex)
+                {
+                    App.MensagemAlerta($"Dados inválidos ou campos não preenchidos \n{ex.Message}");
+                }
             });
 
             //VoltarCommand = new Command(() =>

@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:App2.ViewModel"
+             Title="Cadastrar Partida"
              x:Class="App2.Views.CadastrarPartida">
 
     <ContentPage.BindingContext>
         <vm:CadastrarPartidaViewModel></vm:CadastrarPartidaViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text="{Binding PartidaModel.Name}" Placeholder="Nome dos times"></Entry>
-            <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="Data que ocorreu"></Entry>
-            <Entry Text="{Binding PartidaModel.Local_competicao__c}" Placeholder="Onde ocorreu ?"></Entry>
-            <Entry Text="{Binding PartidaModel.Competicao__C}" Placeholder="Campeonato"></Entry>
+        <StackLayout Margin="40,0,40,0">
+            <Entry Text="{Binding PartidaModel.Name}" Placeholder="Nome dos times" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="Data que ocorreu" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding PartidaModel.Local_competicao__c}" Placeholder="Onde ocorreu ?" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding PartidaModel.Competicao__C}" Placeholder="Campeonato" HorizontalTextAlignment="Center"></Entry>
             <Button Text="Cadastrar Partida" Command="{Binding CadastrarTimeCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

@@ -27,9 +27,9 @@ namespace App2.ViewModel
 
                     MessagingCenter.Send("", "VerPartidasAbrir");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    App.MensagemAlerta("Dados inválidos ou campos não preenchidos");
+                    App.MensagemAlerta($"Dados inválidos ou campos não preenchidos \n{ex.Message}");
                 }
             });
         }

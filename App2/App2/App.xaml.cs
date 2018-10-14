@@ -1,4 +1,5 @@
 ﻿using App2.Layers.Business;
+using App2.Layers.Data;
 using App2.Model;
 using App2.ViewModel;
 using App2.Views;
@@ -35,6 +36,14 @@ namespace App2
             MessagingCenter.Subscribe<LoginViewModel>(this, "CadastrarTimeAbrir", (sender) =>
             {
                 MainPage = new CadastrarTime();
+            });
+
+            MessagingCenter.Subscribe<Views.Menu>(this, "LogoffClicked", (sender) =>
+            {
+                new AcontecimentoData().DropTable();
+                new JogadorSalesForceData().DropTable();
+                new PartidaData().DropTable();
+                MainPage = new Login();
             });
         }
 

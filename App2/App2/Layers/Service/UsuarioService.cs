@@ -51,7 +51,7 @@ namespace App2.Layers.Service
             }
             else
             {
-                throw new Exception("Perfis não encontrados!");
+                throw new Exception("Ops...Ocorreu um erro ao checar o usuario!");
             }
         }
         public void RegisterUserOnSalesforce(string timeId)

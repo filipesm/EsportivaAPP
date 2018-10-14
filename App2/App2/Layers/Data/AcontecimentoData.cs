@@ -14,10 +14,13 @@ namespace App2.Layers.Data
         {
             _dbConn = new DBConnection();
             _dbConn.Connection.CreateTable<ListAcontecimentoModel>();
-        }        public List<ListAcontecimentoModel> GetList()
+        }
+
+        public List<ListAcontecimentoModel> GetList()
         {
             return _dbConn.Connection.Table<ListAcontecimentoModel>().ToList();
-        }        public void Insert(ListAcontecimentoModel acontecimento)
+        }
+        public void Insert(ListAcontecimentoModel acontecimento)
         {
             _dbConn.Connection.Insert(acontecimento);
         }

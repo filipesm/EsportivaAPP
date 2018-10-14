@@ -22,8 +22,12 @@
                 <Entry Text="{Binding JogadorSalesForceModel.Apelido__c}" Placeholder="Apelido" HorizontalTextAlignment="Center"></Entry>
                 <Entry Text="{Binding JogadorSalesForceModel.Numero_na_camisa__c}" Placeholder="Número da Camisa" HorizontalTextAlignment="Center"></Entry>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="Atualizar" BackgroundColor="SteelBlue" Command="{Binding UpdateCommand}"></Button>
-                    <Button Text="Deletar" FontAttributes="Bold" BackgroundColor="IndianRed" Command="{Binding DeleteCommand}"></Button>
+                    <Button Text="Atualizar" BackgroundColor="SteelBlue" Command="{Binding UpdateCommand}" 
+                            HorizontalOptions="CenterAndExpand"
+                            Image="edit.png"></Button>
+                    <Button Text="Deletar" FontAttributes="Bold" BackgroundColor="IndianRed" Command="{Binding DeleteCommand}"
+                            HorizontalOptions="CenterAndExpand"
+                            Image="delete.png"></Button>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

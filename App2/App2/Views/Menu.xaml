@@ -2,12 +2,68 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.Views.Menu"
-             Title="Menu">
+             Title="Menu"
+             BackgroundColor="#0b2c3b">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Jogadores" Clicked="BotaoJogadoresClicked"></Button>
-            <Button Text="Ver Partidas" Clicked="VerPartidasClicked"></Button>
-            <Button Text="Detalhes do time" Clicked="DetalhesTimeClicked"></Button>
+        
+        <StackLayout Padding="20">
+            <Image Source="LogoMenu2.png"></Image>
+            <Button Text="Jogadores"
+                    HorizontalOptions="StartAndExpand"
+                    Image="jogador.png"
+                    Clicked="BotaoJogadoresClicked" 
+                    BackgroundColor="#0b2c3b" 
+                    TextColor="white"  
+                    BorderColor="Transparent" 
+                    BorderWidth="0" 
+                    BorderRadius="0"/>
+
+
+            <BoxView HeightRequest="1"
+             HorizontalOptions="FillAndExpand"
+             Color="White" />
+
+            <Button Text="Ver Partidas" 
+                    Clicked="VerPartidasClicked"
+                    HorizontalOptions="StartAndExpand"
+                    Image="selecao.png"
+                    BorderColor="Transparent" 
+                    TextColor="white"
+                    BackgroundColor="#0b2c3b"
+                    BorderWidth="0" 
+                    BorderRadius="0"/>
+            
+            <BoxView HeightRequest="1"
+             HorizontalOptions="FillAndExpand"
+             Color="White" />
+            
+            <Button Text="Detalhes do time" 
+                    Clicked="DetalhesTimeClicked"
+                    HorizontalOptions="StartAndExpand"
+                    Image="estatistica2.png"
+                    BorderColor="Transparent" 
+                    TextColor="white"
+                    BackgroundColor="#0b2c3b"
+                    BorderWidth="0" 
+                    BorderRadius="0"/>
+
+            <BoxView HeightRequest="1"
+             HorizontalOptions="FillAndExpand"
+             Color="White" />
+
+            <Button Text="Logoff" 
+                    Clicked="LogoffClicked"
+                    HorizontalOptions="StartAndExpand"
+                    Image="logoff.png"
+                    BorderColor="Transparent" 
+                    TextColor="white"
+                    BackgroundColor="#0b2c3b"
+                    BorderWidth="0" 
+                    BorderRadius="0"/>
+
+            <BoxView HeightRequest="1"
+             HorizontalOptions="FillAndExpand"
+             Color="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -45,7 +45,7 @@ namespace App2.Layers.Business
         public void SaveJogador(JogadorSalesForceModel jogadorSalesForce)
         {
             if (!DateTime.TryParseExact(jogadorSalesForce.Data_de_nascimento__c, "dd/MM/yyyy",CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
-                throw new Exception("Informar formato de data válido (00/00/0000)");
+                throw new Exception("Informar formato de data válido (dd/MM/yyyy)");
 
             var id = new JogadoresService().SaveJogadoresOnSalesForce(jogadorSalesForce);
 

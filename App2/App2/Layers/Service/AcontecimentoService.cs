@@ -31,7 +31,7 @@ namespace App2.Layers.Service
             }
             else
             {
-                throw new Exception("Perfis não encontrados!");
+                throw new Exception("Não foi possivel trazer os acontecimentos!");
             }
             
         }

@@ -7,6 +7,7 @@ using App2.Model;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using App2.Layers.Data;
+using System.Globalization;
 
 namespace App2.Layers.Business
 {
@@ -14,6 +15,9 @@ namespace App2.Layers.Business
     {
         public void SavePartida(PartidaModel partidaModel)
         {
+            if (!DateTime.TryParseExact(partidaModel.Data_da_partida__c, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
+                throw new Exception("Informar formato de data válido (dd/MM/yyyy)");
+
             var id = new PartidaService().SavePartidaOnSalesforce(partidaModel);
 
             partidaModel.Id = id;

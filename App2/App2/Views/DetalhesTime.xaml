@@ -11,15 +11,72 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
+        
         <ScrollView>
-            <StackLayout Padding="20">
+            
+            <StackLayout Padding="20" Spacing="10">
                 <Label  Text="{Binding DetalhesTime.Nome}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"></Label>
 
-                <oxy:PlotView Model="{Binding Grafico}" WidthRequest="200" HeightRequest="200" Margin="0,10,0,10"/>
+                <oxy:PlotView Model="{Binding Grafico}" WidthRequest="200" HeightRequest="200" Margin="0,10,0,10" />
+
+                <Grid Margin="0,40,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--<Label Grid.Row="0" Grid.Column="0" Text="Cartão Amarelo" BackgroundColor="Yellow"/>-->
+                    <Image Grid.Row="0" Grid.Column="0" Source="amarelo.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="0" Grid.Column="1" Source="cartao_vermelho.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Cartao_amarelo}"/>
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Cartao_vermelho}" />
+                    <Image Grid.Row="2" Grid.Column="0" Source="ErrouCerto.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="2" Grid.Column="1" Source="Acertou.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Chute_para_fora}" />
+                    <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Chute_para_gol}" />
+                    <Image Grid.Row="4" Grid.Column="0" Source="cruzamento.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="4" Grid.Column="1" Source="goleiro1.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Cruzamento}" />
+                    <Label Grid.Row="5" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Defesa}" />
+                    <Image Grid.Row="6" Grid.Column="0" Source="dibre.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="6" Grid.Column="1" Source="tomada_bola.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Drible}" />
+                    <Label Grid.Row="7" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Tomada_de_bola}" />
+                    <Image Grid.Row="8" Grid.Column="0" Source="falta_feita.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="8" Grid.Column="1" Source="falta_tomada.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="9" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Falta_cometida}" />
+                    <Label Grid.Row="9" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Falta_tomada}" />
+                    <Image Grid.Row="10" Grid.Column="0" Source="gol2.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="10" Grid.Column="1" Source="gol.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="11" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Gol}" />
+                    <Label Grid.Row="11" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Gol_tomado}" />
+                    <Image Grid.Row="12" Grid.Column="0" Source="toque.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Image Grid.Row="12" Grid.Column="1" Source="toque_errado.png" WidthRequest="64" HeightRequest="64"></Image>
+                    <Label Grid.Row="13" Grid.Column="0" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Passe_certo}" />
+                    <Label Grid.Row="13" Grid.Column="1" HorizontalOptions="Center" FontSize="Large" Text="{Binding DetalhesTime.Passe_errado}" />
+                </Grid>
 
 
-                <StackLayout Orientation="Horizontal" >
-                    <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
+                <!--<StackLayout Orientation="Horizontal">
+                    --><!--<Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Cartões" HorizontalOptions="Center" FontSize="Small"></Label>
                             <Label Text="Amarelo" HorizontalOptions="Center" FontSize="Small"></Label>
@@ -27,7 +84,7 @@
                             <Label Text="Vermelho" HorizontalOptions="Center" FontSize="Small"></Label>
                             <Label Text="{Binding DetalhesTime.Cartao_vermelho}" HorizontalOptions="Center"></Label>
                         </StackLayout>
-                    </Frame>
+                    </Frame>--><!--
                     <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Chutes" HorizontalOptions="Center"></Label>
@@ -37,13 +94,13 @@
                             <Label Text="{Binding DetalhesTime.Chute_para_gol}" HorizontalOptions="Center"></Label>
                         </StackLayout>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
 
 
 
 
-                <StackLayout Orientation="Horizontal">
+                <!--<StackLayout Orientation="Horizontal">
                     <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Cruzamentos" HorizontalOptions="Center"></Label>
@@ -60,13 +117,13 @@
                             <Label Text="{Binding DetalhesTime.Tomada_de_bola}" HorizontalOptions="Center"></Label>
                         </StackLayout>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
 
 
 
 
-                <StackLayout Orientation="Horizontal">
+                <!--<StackLayout Orientation="Horizontal">
                     <Frame BorderColor="Black" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Faltas" HorizontalOptions="Center"></Label>
@@ -85,12 +142,12 @@
                             <Label Text="{Binding DetalhesTime.Gol_tomado}" HorizontalOptions="Center"></Label>
                         </StackLayout>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
 
 
 
-                <StackLayout Orientation="Horizontal">
+                <!--<StackLayout Orientation="Horizontal">
                     <Frame BorderColor="Black" HorizontalOptions="FillAndExpand">
                         <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
                             <Label Text="Passes" HorizontalOptions="Center"></Label>
@@ -100,7 +157,7 @@
                             <Label Text="{Binding DetalhesTime.Passe_errado}" HorizontalOptions="Center"></Label>
                         </StackLayout>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
         
             </StackLayout>

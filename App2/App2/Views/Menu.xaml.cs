@@ -28,5 +28,9 @@ namespace App2.Views
         {
             MessagingCenter.Send(this, "DetalhesTimeAbrir");
         }
+        private void LogoffClicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "LogoffClicked");
+        }
     }
 }

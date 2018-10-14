@@ -52,10 +52,10 @@ namespace App2.ViewModel
                         MessagingCenter.Send("", "LoginSucesso");
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
-                    App.MensagemAlerta(ex.Message);
+                    App.MensagemAlerta("Usuário não existe");
                 }
 
             });

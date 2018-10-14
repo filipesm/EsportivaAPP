@@ -8,7 +8,7 @@
         <vm:CadastrarAcontecimentoViewModel></vm:CadastrarAcontecimentoViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="40,0,40,0">
             <Picker Title="Acontecimento" ItemsSource="{Binding Acontecimentos}" SelectedItem="{Binding CadAcontecimentoModel.ListAcontecimentoModel}" ItemDisplayBinding="{Binding Name}" ></Picker>
             <Picker Title="Jogador" ItemsSource="{Binding Jogadores}" SelectedItem="{Binding CadAcontecimentoModel.JogadorSalesForceModel}" ItemDisplayBinding="{Binding Apelido__c}" ></Picker>
             <Entry Text="{Binding CadAcontecimentoModel.Tempo_do_acontecimento__c}" Placeholder="Tempo"></Entry>
