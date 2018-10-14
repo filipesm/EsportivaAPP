@@ -17,21 +17,22 @@ namespace App2.Model
         }
         #endregion
 
-        private string jogador__c;
+        //private string jogador__c;
 
-        public string Jogador__c
-        {
-            get { return jogador__c; }
-            set { if (jogador__c != value) jogador__c = value; NotifyPropertyChanged(); }
-        }
+        //public string Jogador__c
+        //{
+        //    get { return jogador__c; }
+        //    set { if (jogador__c != value) jogador__c = value; NotifyPropertyChanged(); }
+        //}
 
-        private string partida__c;
+        //private string partida__c;
 
-        public string Partida__c
-        {
-            get { return partida__c; }
-            set { if (partida__c != value) partida__c = value; NotifyPropertyChanged(); }
-        }
+        //public string Partida__c
+        //{
+        //    get { return partida__c; }
+        //    set { if (partida__c != value) partida__c = value; NotifyPropertyChanged(); }
+        //}
+
         private int tempo_do_acontecimento__c;
 
         public int Tempo_do_acontecimento__c

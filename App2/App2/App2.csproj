@@ -12,6 +12,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.0.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 
@@ -52,9 +54,5 @@
     <EmbeddedResource Update="Views\Principal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Layers\Data\" />
   </ItemGroup>
 </Project>

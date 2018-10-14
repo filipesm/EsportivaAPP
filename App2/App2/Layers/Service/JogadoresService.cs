@@ -35,7 +35,7 @@ namespace App2.Layers.Service
 
 
         }
-        public void SaveJogadoresOnSalesForce(JogadorSalesForceModel jogadorSalesForce)
+        public string SaveJogadoresOnSalesForce(JogadorSalesForceModel jogadorSalesForce)
         {
             var _urlAccountApi = "https://na49.salesforce.com/services/data/v43.0/sobjects/Jogador__c";
 
@@ -54,7 +54,10 @@ namespace App2.Layers.Service
             if (response.IsSuccessStatusCode)
             {
                 var conteudoResposta = response.Content.ReadAsStringAsync().Result;
-                dynamic json = JsonConvert.DeserializeObject(conteudoResposta);
+
+                var id = JsonConvert.DeserializeObject<IdModel>(conteudoResposta);
+
+                return id.Id;
             }
             else
             {

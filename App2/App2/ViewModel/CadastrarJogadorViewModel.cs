@@ -20,11 +20,18 @@ namespace App2.ViewModel
 
             CadastrarCommand = new Command(() =>
             {
-                new JogadoresBusiness().SaveJogador(JogadorSalesForce);
+                try
+                {
+                    new JogadoresBusiness().SaveJogador(JogadorSalesForce);
 
-                MessagingCenter.Send("", "JogadoresAbrir");
+                    MessagingCenter.Send("", "JogadoresAbrir");
 
-                App.MensagemAlerta($"{JogadorSalesForce.Name} cadastrado com sucesso");
+                    App.MensagemAlerta($"{JogadorSalesForce.Name} cadastrado com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    App.MensagemAlerta($"Dados inválidos ou campos não preenchidos\n{ex.Message}");
+                }
             });
         }
     }

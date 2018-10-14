@@ -6,6 +6,7 @@ using App2.Layers.Service;
 using App2.Model;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using App2.Layers.Data;
 
 namespace App2.Layers.Business
 {
@@ -13,23 +14,36 @@ namespace App2.Layers.Business
     {
         public void SavePartida(PartidaModel partidaModel)
         {
-            new PartidaService().SavePartidaOnSalesforce(partidaModel);
+            var id = new PartidaService().SavePartidaOnSalesforce(partidaModel);
+
+            partidaModel.Id = id;
+
+            new PartidaData().Insert(partidaModel);
         }
 
         public IList<PartidaModel> GetPartida()
         {
-            var partidas = new PartidaService().GetPartidaFromSalesforce();
+            IList<PartidaModel> searchResults = null;
 
-            JObject jObject = JObject.Parse(partidas);
+            searchResults = new PartidaData().GetList();
 
-            IList<JToken> results = jObject["records"].Children().ToList();
-
-            IList<PartidaModel> searchResults = new List<PartidaModel>();
-
-            foreach (var result in results)
+            if (searchResults.Count == 0)
             {
-                PartidaModel searchResult = result.ToObject<PartidaModel>();
-                searchResults.Add(searchResult);
+                var partidas = new PartidaService().GetPartidaFromSalesforce();
+
+                JObject jObject = JObject.Parse(partidas);
+
+                IList<JToken> results = jObject["records"].Children().ToList();
+
+                searchResults = new List<PartidaModel>();
+
+                foreach (var result in results)
+                {
+                    PartidaModel searchResult = result.ToObject<PartidaModel>();
+                    searchResults.Add(searchResult);
+
+                    new PartidaData().Insert(searchResult);
+                }
             }
             return searchResults;
         }

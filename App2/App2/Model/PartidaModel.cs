@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -20,6 +21,7 @@ namespace App2.Model
 
         private string id;
 
+        [PrimaryKey]
         public string Id
         {
             get { return id; }
@@ -36,7 +38,6 @@ namespace App2.Model
 
         private string data_da_partida__c;
 
-        //[Newtonsoft.Json.JsonProperty(Name= "Data_da_partida__c")]
         public string Data_da_partida__c
         {
             get { return data_da_partida__c; }

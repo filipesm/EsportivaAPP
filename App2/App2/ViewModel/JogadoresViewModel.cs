@@ -45,15 +45,22 @@ namespace App2.ViewModel
         {
             Jogadores = new JogadoresBusiness().GetJogadores();
 
-            JogadorTappedCommand = new Command(() =>
+            try
             {
-                MessagingCenter.Send(JogadorSelecionado, "JogadorDetalhesAbrir");
-            });
+                JogadorTappedCommand = new Command(() =>
+                    {
+                        MessagingCenter.Send(JogadorSelecionado, "JogadorDetalhesAbrir");
+                    });
 
-            CadastrarJogadorClicked = new Command(() =>
+                CadastrarJogadorClicked = new Command(() =>
+                {
+                    MessagingCenter.Send(this, "CadastrarJogadorAbrir");
+                });
+            }
+            catch (Exception ex)
             {
-                MessagingCenter.Send(this, "CadastrarJogadorAbrir");
-            });
+                
+            }
         }
     }
 }

@@ -54,7 +54,7 @@ namespace App2.ViewModel
 
             DeleteCommand = new Command(() =>
             {
-                new JogadoresBusiness().DeleteJogador(JogadorSalesForceModel.Id);
+                new JogadoresBusiness().DeleteJogador(JogadorSalesForceModel.Id, JogadorSalesForceModel);
 
                 App.MensagemAlerta("Jogador excluido com sucesso");
 

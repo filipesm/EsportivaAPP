@@ -41,7 +41,19 @@ namespace App2.ViewModel
 
             CadastrarClickedCommand = new Command(() =>
             {
-                new AcontecimentoBusiness().SaveAcontecimento(CadAcontecimentoModel);
+                try
+                {
+                    new AcontecimentoBusiness().SaveAcontecimento(CadAcontecimentoModel);
+
+                    App.MensagemAlerta("Acontecimento Cadastrado com sucesso");
+
+                    MessagingCenter.Send("", "VerPartidasAbrir");
+                }
+                catch (Exception)
+                {
+
+                    App.MensagemAlerta("Falha ao cadastrar, favor preencher todos os campos");
+                }
             });
         }
 
