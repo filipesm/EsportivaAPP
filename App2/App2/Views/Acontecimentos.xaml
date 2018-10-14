@@ -18,7 +18,7 @@
                         <ViewCell>
                             <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" Orientation="Vertical">
                                 <Label FontSize="Large" Text="{Binding Nome_jogador}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
-                                <Label FontSize="Small" Text="{Binding Tempo}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                <Label FontSize="Small" Text="{Binding Tempo , StringFormat='{}{0} min' }" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                                 <Label FontSize="Small" Text="{Binding Tipo}" FontAttributes="Bold" HorizontalOptions="Center"></Label>
                             </StackLayout>
                         </ViewCell>

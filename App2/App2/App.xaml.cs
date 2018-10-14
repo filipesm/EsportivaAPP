@@ -23,7 +23,7 @@ namespace App2
         {
 
             //var _dbConn = new Layers.Data.Config.DBConnection();
-            
+
 
 
             Global.TokenSalesForce = new GenerateTokenBusiness().GetTokenFromSalesForce();
@@ -40,6 +40,7 @@ namespace App2
 
             MessagingCenter.Subscribe<Views.Menu>(this, "LogoffClicked", (sender) =>
             {
+                Global.TimeNome = null;
                 new AcontecimentoData().DropTable();
                 new JogadorSalesForceData().DropTable();
                 new PartidaData().DropTable();

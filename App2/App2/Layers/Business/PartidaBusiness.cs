@@ -18,6 +18,8 @@ namespace App2.Layers.Business
             if (!DateTime.TryParseExact(partidaModel.Data_da_partida__c, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date))
                 throw new Exception("Informar formato de data válido (dd/MM/yyyy)");
 
+            partidaModel.Name = $"{Global.TimeNome} x {partidaModel.Name}";
+
             var id = new PartidaService().SavePartidaOnSalesforce(partidaModel);
 
             partidaModel.Id = id;

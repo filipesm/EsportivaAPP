@@ -11,5 +11,6 @@ namespace App2.Model
         public static TokenSalesForceModel TokenSalesForce { get; set; }
         public static string TimeId { get; set; }
         public static string PartidaId { get; set; }
+        public static string TimeNome { get; set; }
     }
 }

@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Margin="40,0,40,0">
-            <Entry Text="{Binding PartidaModel.Name}" Placeholder="Nome dos times" HorizontalTextAlignment="Center"></Entry>
+            <Entry Text="{Binding PartidaModel.Name}" Placeholder="Contra quem jogou ?" HorizontalTextAlignment="Center"></Entry>
             <Entry Text="{Binding PartidaModel.Data_da_partida__c}" Placeholder="Data que ocorreu" HorizontalTextAlignment="Center"></Entry>
             <Entry Text="{Binding PartidaModel.Local_competicao__c}" Placeholder="Onde ocorreu ?" HorizontalTextAlignment="Center"></Entry>
             <Entry Text="{Binding PartidaModel.Competicao__C}" Placeholder="Campeonato" HorizontalTextAlignment="Center"></Entry>

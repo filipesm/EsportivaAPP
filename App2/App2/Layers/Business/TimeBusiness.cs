@@ -21,7 +21,10 @@ namespace App2.Layers.Business
         public DetalhesTimeModel GetDetalheTime()
         {
             var dados = new TimeService().GetDetalhesTimeSalesForce();
-            DetalhesTimeModel detalhes = dados.ToObject<DetalhesTimeModel>();            
+            DetalhesTimeModel detalhes = dados.ToObject<DetalhesTimeModel>();
+
+            if (Global.TimeNome == null)
+                Global.TimeNome = detalhes.Nome;
 
             return detalhes;
         }
