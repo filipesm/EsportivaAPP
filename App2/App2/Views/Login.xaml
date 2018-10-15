@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:App2.ViewModel"  x:Class="App2.Views.Login" Title="Login">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:App2.ViewModel"  
+             x:Class="App2.Views.Login" 
+             BackgroundColor="#0b2c3b"
+             Title="Login">
 
     <ContentPage.BindingContext>
 
@@ -10,14 +15,23 @@
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="Center" Margin="50">
-           
-            <Image Source="logo.png"></Image>
 
-            <Entry Placeholder="email@email.com" Text="{Binding Usuario.Usuario}"></Entry>
-            <Entry Placeholder="123456" IsPassword="true" Text="{Binding Usuario.Senha}"></Entry>
+            <Image Source="LogoMenu2.png"></Image>
 
-            <Button Text="Login" Command="{Binding LoginClickedCommand}"></Button>
-            <Button Text="Register" Command="{Binding RegisterClickedCommand}"></Button>
+            <Entry Placeholder="email@email.com" Text="{Binding Usuario.Usuario}" TextColor="White" ></Entry>
+            <Entry Placeholder="123456" IsPassword="true" Text="{Binding Usuario.Senha}" TextColor="White"></Entry>
+
+            <Button Text="Login" 
+                    Command="{Binding LoginClickedCommand}" 
+                    
+                    BackgroundColor="#ed174c" 
+                    TextColor="White"></Button>
+            
+            <Button Text="Register" 
+                    Command="{Binding RegisterClickedCommand}" 
+                    
+                    BackgroundColor="#ed174c" 
+                    TextColor="White"></Button>
 
 
         </StackLayout>
